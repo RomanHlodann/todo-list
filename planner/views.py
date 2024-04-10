@@ -19,3 +19,9 @@ class TaskCreateView(generic.CreateView):
     success_url = reverse_lazy("planner:index")
     form_class = TaskCreationForm
 
+
+class TaskUpdateView(generic.UpdateView):
+    model = Task
+    success_url = reverse_lazy("planner:index")
+    form_class = TaskCreationForm
+
