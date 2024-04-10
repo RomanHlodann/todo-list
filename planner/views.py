@@ -26,6 +26,11 @@ class TaskUpdateView(generic.UpdateView):
     form_class = TaskCreationForm
 
 
+class TaskDeleteView(generic.DeleteView):
+    model = Task
+    success_url = reverse_lazy("planner:index")
+
+
 class TagListView(generic.ListView):
     model = Tag
 
