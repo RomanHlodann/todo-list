@@ -9,14 +9,14 @@
       <div class="d-flex justify-content-between align-items-center">
         <div class="row m-0">
           <h4 class="mb-0 mr-3">{{ task.content }} </h4>
-          {% if task.is_completed %} 
+          {% if task.is_completed %}
               <h4 style="color: green;">Done</h4>
-              </div>
-              <a class="btn btn-info">Undo</a>
+        </div>
+              <a class="btn btn-info" href="{% url "planner:task-toggle" task.id %}">Undo</a>
               {% else %}
                 <h4 style="color: red;">Not done</h4>
-                </div>
-                <a class="btn btn-success">Complete</a>
+        </div>
+                <a class="btn btn-success" href="{% url "planner:task-toggle" task.id %}">Complete</a>
             {% endif %}
       </div>
       <div class="mt-3">
